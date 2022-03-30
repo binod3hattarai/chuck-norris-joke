@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Chuck Norris Joke Generator</title>
+</head>
+<body class="font-main bg-gray-100 text-gray-800">
+    <div class="container mx-auto px-6 py-4">
+        <!-- https://www.icndb.com/api/ -->
+        <h1 class="text-2xl text-center font-semibold mt-2 mb-8 text-gray-700">Chuck Norris Joke Generator</h1>
+
+        <form id="joke-form" class="flex flex-col items-stretch mb-4">
+            <div class="md:flex md:flex-row">
+                <label for="first-name" class="flex flex-col items-stretch mb-4 md:flex-1">
+                    <span class="pb-1">First Name</span>
+                    <input class="border border-gray-400 outline-none py-2 px-4 rounded-md placeholder-gray-300" type="text" id="first-name" placeholder="Enter your first name" autocomplete="off">
+                </label>
+    
+                <label for="last-name" class="flex flex-col items-stretch mb-4 md:flex-1 md:ml-4">
+                    <span class="pb-1">Last Name</span>
+                    <input class="border border-gray-400 outline-none py-2 px-4 rounded-md placeholder-gray-300" type="text" id="last-name" placeholder="Enter your last name" autocomplete="off">
+                </label>
+            </div>
+
+            <div class="md:flex md:flex-row md:mt-4 md:items-center">
+                <div class="flex flex-col md:flex md:flex-row md:items-center md:justify-start md:flex-1">
+                    <span class="pb-1 md:pb-0">Choose joke category:</span>
+                    <select class="border border-gray-800 py-2 px-4 rounded-md mb-4 outline-none bg-gray-300 md:mb-0 md:ml-4 md:flex-1 md:cursor-pointer" id="joke-category">
+                        <option value="explicit" selected>Explicit</option>
+                        <option value="nerdy">Nerdy</option>
+                    </select>
+                </div>
+    
+                <div class="flex flex-col md:flex-1 md:ml-4 md:items-center md:flex md:flex-row">
+                    <span class="pb-1 md:pb-0">How many jokes you want to see?</span>
+                    <input class="border border-gray-400 outline-none py-2 px-4 rounded-md placeholder-gray-300 mb-4 md:mb-0 md:flex-1 md:ml-4" type="number" id="number" placeholder="Enter number here . . . ">
+                </div>
+            </div>
+
+            <div class="flex flex-row justify-between md:justify-start md:mt-8">
+                <input class="flex-1 uppercase bg-gray-600 text-gray-50 outline-none py-2 px-4 rounded-md md:flex-none md:cursor-pointer" type="submit" value="Get Jokes">
+                <input class="ml-2 flex-1 uppercase bg-gray-600 text-gray-50 outline-none py-2 px-4 rounded-md md:flex-none md:cursor-pointer" id="clear-all" type="button" value="Clear All">
+            </div>
+        </form>
+
+        <div class="mb-4 mt-8" id="output"></div>
+
+        <!-- Note Section: -->
+        <span class="font-bold block underline mt-6 pb-1">NOTE:</span>
+        <span class="inline-block font-semibold">Total Number of Jokes: </span>
+        <span class="font-semibold text-green-600 pl-3 text-lg" id="number-of-jokes"></span>
+
+        <span class="font-semibold block pt-1">Total Joke Categories:</span>
+        <ul class="pt-1 list-decimal px-5" id="joke-categories"></ul>
+    </div>
+
+    <!-- Loading JavaScript -->
+    <script src="./app.js"></script>
+</body>
+</html>
